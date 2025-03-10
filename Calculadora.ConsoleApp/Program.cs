@@ -17,6 +17,7 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("3.Multiplicação");
                 Console.WriteLine("4.Divisão");
                 Console.WriteLine("5.Tabuada");
+                Console.WriteLine("H.Histórico");
                 Console.WriteLine("S.Sair");
 
                 Console.WriteLine();
@@ -32,11 +33,10 @@ namespace Calculadora.ConsoleApp
                     break;
                 }
 
+
                 else if (opcao == "5")
                 {
-                    Console.WriteLine("\n\n=======================================");
-                    Console.WriteLine("Tabuada");
-                    Console.WriteLine("=======================================");
+                    Console.WriteLine("\n===== TABUADA =====");
 
                     Console.Write("Digite o número da tabuada: ");
                     int numeroTabuada = Convert.ToInt32(Console.ReadLine());
@@ -64,12 +64,13 @@ namespace Calculadora.ConsoleApp
                 //Soma
                 if (opcao == "1")
                 {
+                    
 
                     //processo
                     resultado = n1 + n2;
 
                     //saida
-                    Console.WriteLine("\n=======================================");
+                    Console.WriteLine("\n===== SOMA =====");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da soma: " + resultado.ToString("F2"));
@@ -86,7 +87,7 @@ namespace Calculadora.ConsoleApp
                     resultado = n1 - n2;
 
                     //saida
-                    Console.WriteLine("\n=======================================");
+                    Console.WriteLine("\n===== SUBTRAÇÃO =====");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua subtração é: " + resultado.ToString("F2"));
@@ -103,7 +104,7 @@ namespace Calculadora.ConsoleApp
                     resultado = n1 * n2;
 
                     //saida
-                    Console.WriteLine("\n=======================================");
+                    Console.WriteLine("\n===== MULTIPLICAÇÃO =====");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua multiplacação é: " + resultado.ToString("F2"));
@@ -125,7 +126,7 @@ namespace Calculadora.ConsoleApp
                     resultado = n1 / n2;
 
                     //saida
-                    Console.WriteLine("\n=======================================");
+                    Console.WriteLine("\n===== DIVISÃO =====");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua divisão é: " + resultado.ToString("F2"));
