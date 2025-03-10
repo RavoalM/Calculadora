@@ -15,7 +15,7 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("2.Subtração");
                 Console.WriteLine("3.Multiplicação");
                 Console.WriteLine("4.Divisão");
-                Console.WriteLine("E.Sair");
+                Console.WriteLine("S.Sair");
 
                 Console.WriteLine();
                 Console.Write("Escolha uma opção: ");
@@ -26,10 +26,9 @@ namespace Calculadora.ConsoleApp
 
 
                 //Sair
-                if (opcaoValida == "E")
-                {
+                if (opcaoValida == "S")
                     break;
-                }
+                
 
                 Console.Write("Digite o primeiro número: ");
                 double n1s = Console.ReadLine();
@@ -52,12 +51,9 @@ namespace Calculadora.ConsoleApp
                     Console.WriteLine("\n=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
-                    Console.WriteLine("Resultado da soma: " + resultado);
+                    Console.WriteLine("Resultado da soma: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                    Console.WriteLine("Deseja continuar (S/N): ");
-
-
-                    Console.ReadLine();
+                  
                 }
 
 
@@ -71,12 +67,10 @@ namespace Calculadora.ConsoleApp
                     //saida
                     Console.WriteLine("\n=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
-                    Console.WriteLine("O segundo número é: " + n2); 
-                    Console.WriteLine("Resultado da sua subtração é: " + resultado);
+                    Console.WriteLine("O segundo número é: " + n2);
+                    Console.WriteLine("Resultado da sua subtração é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                    Console.WriteLine("Deseja continuar (S/N): ");
-
-                    Console.ReadLine();
+                   
                 }
 
 
@@ -91,11 +85,9 @@ namespace Calculadora.ConsoleApp
                     Console.WriteLine("\n=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
-                    Console.WriteLine("Resultado da sua multiplacação é: " + resultado);
+                    Console.WriteLine("Resultado da sua multiplacação é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                    Console.WriteLine("Deseja continuar (S/N): ");
-
-                    Console.ReadLine();
+                    
                 }
 
 
@@ -110,22 +102,16 @@ namespace Calculadora.ConsoleApp
                     Console.WriteLine("\n=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
-                    Console.WriteLine("Resultado da sua divisão é: " + resultado);
+                    Console.WriteLine("Resultado da sua divisão é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                    Console.WriteLine("Deseja continuar (S/N): ");
 
-                    Console.ReadLine();
                 }
 
+                Console.WriteLine("Deseja continuar (S/N): ");
+                string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 else if (opcaoValida == "")
-                {
                     Console.WriteLine("Opção inválida, por favor escolha uma opção válida");
-
-                    break;
-                }
-
-            
             }
         }
     }
