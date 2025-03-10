@@ -9,39 +9,59 @@ namespace Calculadora.ConsoleApp
             while (true)
             {
                 Console.WriteLine("Calculadora Tabajara 2025");
+                Console.WriteLine("=======================================");
 
                 //menu
-                Console.WriteLine("1.Soma");
+                Console.WriteLine("\n1.Soma");
                 Console.WriteLine("2.Subtração");
                 Console.WriteLine("3.Multiplicação");
                 Console.WriteLine("4.Divisão");
+                Console.WriteLine("5.Tabuada");
                 Console.WriteLine("S.Sair");
 
                 Console.WriteLine();
                 Console.Write("Escolha uma opção: ");
 
-                String opcao = Console.ReadLine();
-                String opcaoValida = opcao.ToUpper();//ToUpper converte a string para maiúscula
 
+                string opcao = Console.ReadLine().ToUpper();//ToUpper converte a string para maiúscula
 
 
                 //Sair
-                if (opcaoValida == "S")
+                if (opcao == "S")
+                {
                     break;
-                
+                }
+                else if (opcao == "5")
+                {
+                    Console.WriteLine("\n\n=======================================");
+                    Console.WriteLine("Tabuada");
+                    Console.WriteLine("=======================================");
+
+                    Console.Write("Digite o número da tabuada: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+
+                    for (int contador = 1; contador <= 10; contador++)
+                    {
+                        int resultadoTabuada = numeroTabuada * contador;
+
+                        //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
+                        Console.WriteLine ($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
+                    }
+
+                }
 
                 Console.Write("Digite o primeiro número: ");
-                double n1s = Console.ReadLine();
-                double n1 = Convert.ToInt32(n1s);
+                string n1s = Console.ReadLine();
+                decimal n1 = Convert.ToDecimal(n1s);
 
                 Console.Write("Digite o segundo número: ");
                 string n2s = Console.ReadLine();
-                double n2 = Convert.ToInt32(n2s);
+                decimal n2 = Convert.ToDecimal(n2s);
 
-                double resultado = 0;
+                decimal resultado = 0;
 
                 //Soma
-                else if (opcaoValida == "1")
+                else if (opcao == "1")
                 {
 
                     //processo
@@ -58,7 +78,7 @@ namespace Calculadora.ConsoleApp
 
 
                 //Subtração
-                else if (opcaoValida == "2")
+                else if (opcao == "2")
                 {
 
                     //processo
@@ -75,7 +95,7 @@ namespace Calculadora.ConsoleApp
 
 
                 //Multiplicação
-                else if (opcaoValida == "3")
+                else if (opcao == "3")
                 {
 
                     //processo
@@ -92,10 +112,15 @@ namespace Calculadora.ConsoleApp
 
 
                 //Divisão
-                else if (opcaoValida == "4")
+                else if (opcao == "4")
                 {
 
                     //processo
+                    while (n2 == 0)
+                    {
+                        Console.Write("Não é possível dividir por 0\n Digite o segundo número novamente -> ");
+                        n2 = Convert.ToDecimal(Console.ReadLine());
+                    }
                     resultado = n1 / n2;
 
                     //saida
@@ -110,8 +135,9 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("Deseja continuar (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
-                else if (opcaoValida == "")
-                    Console.WriteLine("Opção inválida, por favor escolha uma opção válida");
+                if (opcaoContinuar != "S")
+                    break;
+
             }
         }
     }
