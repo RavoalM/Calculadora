@@ -31,6 +31,7 @@ namespace Calculadora.ConsoleApp
                 {
                     break;
                 }
+
                 else if (opcao == "5")
                 {
                     Console.WriteLine("\n\n=======================================");
@@ -61,7 +62,7 @@ namespace Calculadora.ConsoleApp
                 decimal resultado = 0;
 
                 //Soma
-                else if (opcao == "1")
+                if (opcao == "1")
                 {
 
                     //processo
