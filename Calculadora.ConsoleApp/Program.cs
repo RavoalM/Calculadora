@@ -6,6 +6,9 @@ namespace Calculadora.ConsoleApp
         static void Main(string[] args)
         {
 
+            string[] historicoOperacoes = new string[100];
+            int contadorHistorico = 0;
+
             while (true)
             {
                 Console.WriteLine("Calculadora Tabajara 2025");
@@ -33,10 +36,10 @@ namespace Calculadora.ConsoleApp
                     break;
                 }
 
-
                 else if (opcao == "5")
                 {
                     Console.WriteLine("\n===== TABUADA =====");
+                    Console.WriteLine("=======================================");
 
                     Console.Write("Digite o número da tabuada: ");
                     int numeroTabuada = Convert.ToInt32(Console.ReadLine());
@@ -46,9 +49,32 @@ namespace Calculadora.ConsoleApp
                         int resultadoTabuada = numeroTabuada * contador;
 
                         //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
-                        Console.WriteLine ($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
+                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
+
+                        historicoOperacoes[contadorHistorico] = $"{numeroTabuada} x {contador} = {resultadoTabuada}";
+                    }
+                    Console.WriteLine("\nAperte ENTER para continuar");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                //Histórico
+                else if (opcao == "H")
+                {
+                    Console.WriteLine("\n===== HISTÓRICO =====");
+                    Console.WriteLine("=======================================");
+
+                    for (int contador = 0; contador < historicoOperacoes.Length; contador++)
+                    {
+                        string valorAtual = historicoOperacoes[contador];
+
+                        if (valorAtual != null)
+                            Console.WriteLine(valorAtual);
                     }
 
+                    Console.WriteLine("\nAperte ENTER para continuar");
+                    Console.ReadLine();
+                    continue;
                 }
 
                 Console.Write("Digite o primeiro número: ");
@@ -64,18 +90,18 @@ namespace Calculadora.ConsoleApp
                 //Soma
                 if (opcao == "1")
                 {
-                    
-
                     //processo
                     resultado = n1 + n2;
 
                     //saida
                     Console.WriteLine("\n===== SOMA =====");
+                    Console.WriteLine("=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da soma: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                  
+                    historicoOperacoes[contadorHistorico] = $"{n1} + {n2} = {resultado}";
+
                 }
 
 
@@ -88,11 +114,13 @@ namespace Calculadora.ConsoleApp
 
                     //saida
                     Console.WriteLine("\n===== SUBTRAÇÃO =====");
+                    Console.WriteLine("=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua subtração é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                   
+                    historicoOperacoes[contadorHistorico] = $"{n1} - {n2} = {resultado}";
+
                 }
 
 
@@ -105,11 +133,13 @@ namespace Calculadora.ConsoleApp
 
                     //saida
                     Console.WriteLine("\n===== MULTIPLICAÇÃO =====");
+                    Console.WriteLine("=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua multiplacação é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
-                    
+                    historicoOperacoes[contadorHistorico] = $"{n1} * {n2} = {resultado}";
+
                 }
 
 
@@ -127,19 +157,24 @@ namespace Calculadora.ConsoleApp
 
                     //saida
                     Console.WriteLine("\n===== DIVISÃO =====");
+                    Console.WriteLine("=======================================");
                     Console.WriteLine("O primeiro número é: " + n1);
                     Console.WriteLine("O segundo número é: " + n2);
                     Console.WriteLine("Resultado da sua divisão é: " + resultado.ToString("F2"));
                     Console.WriteLine("=======================================");
+                    historicoOperacoes[contadorHistorico] = $"{n1} / {n2} = {resultado}";
 
                 }
 
+                contadorHistorico += 1;
+
                 Console.WriteLine("Deseja continuar (S/N): ");
+                
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 if (opcaoContinuar != "S")
                     break;
-
+                Console.ReadLine();
             }
         }
     }
