@@ -11,11 +11,12 @@ namespace Calculadora.ConsoleApp
 
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("Calculadora Tabajara 2025");
                 Console.WriteLine("=======================================");
 
                 //menu
-                Console.WriteLine("\n1.Soma");
+                Console.WriteLine("1.Soma");
                 Console.WriteLine("2.Subtração");
                 Console.WriteLine("3.Multiplicação");
                 Console.WriteLine("4.Divisão");
@@ -25,7 +26,6 @@ namespace Calculadora.ConsoleApp
 
                 Console.WriteLine();
                 Console.Write("Escolha uma opção: ");
-
 
                 string opcao = Console.ReadLine().ToUpper();//ToUpper converte a string para maiúscula
 
@@ -50,9 +50,8 @@ namespace Calculadora.ConsoleApp
 
                         //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
                         Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
-
-                        historicoOperacoes[contadorHistorico] = $"{numeroTabuada} x {contador} = {resultadoTabuada}";
                     }
+
                     Console.WriteLine("\nAperte ENTER para continuar");
                     Console.ReadLine();
                     continue;
@@ -169,7 +168,6 @@ namespace Calculadora.ConsoleApp
                 contadorHistorico += 1;
 
                 Console.WriteLine("Deseja continuar (S/N): ");
-                
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 if (opcaoContinuar != "S")
