@@ -1,4 +1,6 @@
-﻿# Calculadora Tabajara 2025
+﻿# Calculadora Tabajara 2025 
+
+![](https://i.pinimg.com/originals/1e/fd/69/1efd69f0ebb387e02be7c92dd04649e0.gif)
 
 ## Introdução
 
@@ -17,6 +19,8 @@ Essa linda calculadora de **ALTÍSSIMA POTÊNCIA**, inacessível até mesmo para
 - **Divisão por zero**: A capacidade de não erradicar o universo quando alguém tentar dividir por zero.
 <br> <br>
 - **Tabuada**: A capacidade de mostrar o mistico conhecimento denominado "Tabuada" para que você tenha a incrível capacidade de passar de uma prova do 4º ano.
+<br> <br>
+![](https://i.imgur.com/krolZ77.gif)
 
 ## Como utilizar
 
@@ -48,4 +52,9 @@ Calculdora.ConsoleApp.exe
 
 ## Requisitos
 
-- .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execu��o do projeto.
+- .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
+
+# Tenha um bom dia
+![](https://i.ytimg.com/vi/jxl9M4jasxc/mqdefault.jpg)
+
+
