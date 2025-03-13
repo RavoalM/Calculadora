@@ -11,24 +11,8 @@ namespace Calculadora.ConsoleApp
 
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("Calculadora Tabajara 2025");
-                Console.WriteLine("=======================================");
-
-                //menu
-                Console.WriteLine("1.Soma");
-                Console.WriteLine("2.Subtração");
-                Console.WriteLine("3.Multiplicação");
-                Console.WriteLine("4.Divisão");
-                Console.WriteLine("5.Tabuada");
-                Console.WriteLine("H.Histórico");
-                Console.WriteLine("S.Sair");
-
-                Console.WriteLine();
-                Console.Write("Escolha uma opção: ");
-
-                string opcao = Console.ReadLine().ToUpper();//ToUpper converte a string para maiúscula
-
+                // exibe o menu
+                string opcao = ExibirMenu();
 
                 //Sair
                 if (opcao == "S")
@@ -173,6 +157,29 @@ namespace Calculadora.ConsoleApp
                 if (opcaoContinuar != "S")
                     break;
                 Console.ReadLine();
+            }
+
+            static string ExibirMenu()
+            {
+                Console.Clear();
+                Console.WriteLine("Calculadora Tabajara 2025");
+                Console.WriteLine("=======================================");
+
+                //menu
+                Console.WriteLine("1.Soma");
+                Console.WriteLine("2.Subtração");
+                Console.WriteLine("3.Multiplicação");
+                Console.WriteLine("4.Divisão");
+                Console.WriteLine("5.Tabuada");
+                Console.WriteLine("H.Histórico");
+                Console.WriteLine("S.Sair");
+
+                Console.WriteLine();
+                Console.Write("Escolha uma opção: ");
+
+                string opcao = Console.ReadLine().ToUpper();//ToUpper converte a string para maiúscula
+
+                return opcao;
             }
         }
     }
