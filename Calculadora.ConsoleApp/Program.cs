@@ -15,31 +15,13 @@ namespace Calculadora.ConsoleApp
                 string opcao = ExibirMenu();
 
                 //Sair
-                if (opcao == "S")
+                if (SairEscolhida(opcao))
                 {
                     break;
                 }
 
-                else if (opcao == "5")
-                {
-                    Console.WriteLine("\n===== TABUADA =====");
-                    Console.WriteLine("=======================================");
-
-                    Console.Write("Digite o número da tabuada: ");
-                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
-
-                    for (int contador = 1; contador <= 10; contador++)
-                    {
-                        int resultadoTabuada = numeroTabuada * contador;
-
-                        //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
-                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
-                    }
-
-                    Console.WriteLine("\nAperte ENTER para continuar");
-                    Console.ReadLine();
-                    continue;
-                }
+                else if (TabuadaEscolhida(opcao))
+                    exibirtabuada();
 
                 //Histórico
                 else if (opcao == "H")
@@ -180,6 +162,60 @@ namespace Calculadora.ConsoleApp
                 string opcao = Console.ReadLine().ToUpper();//ToUpper converte a string para maiúscula
 
                 return opcao;
+            }
+
+            static bool SairEscolhida(string opcao)
+            {
+                bool SairEscolhida = opcao == "S";
+
+                return SairEscolhida;
+            }
+
+            static void TabuadaEscolhida(string opcao)
+            {
+                bool TabuadaEscolhida = opcao == "5";
+
+                return TabuadaEscolhida;
+            }
+
+            static void exibirtabuada()
+            {
+                {
+                    Console.WriteLine("\n===== TABUADA =====");
+                    Console.WriteLine("=======================================");
+
+                    Console.Write("Digite o número da tabuada: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+
+                    for (int contador = 1; contador <= 10; contador++)
+                    {
+                        int resultadoTabuada = numeroTabuada * contador;
+
+                        //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
+                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
+                    }
+
+                    Console.WriteLine("\nAperte ENTER para continuar");
+                    Console.ReadLine();
+                    {
+                        Console.WriteLine("\n===== TABUADA =====");
+                        Console.WriteLine("=======================================");
+
+                        Console.Write("Digite o número da tabuada: ");
+                        int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+
+                        for (int contador = 1; contador <= 10; contador++)
+                        {
+                            int resultadoTabuada = numeroTabuada * contador;
+
+                            //string linhaTabuada = numeroTabuada + " x " + contador + " = " + resultadoTabuada;
+                            Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}"); //interpolação
+                        }
+
+                        Console.WriteLine("\nAperte ENTER para continuar");
+                        Console.ReadLine();
+                    }
+                }
             }
         }
     }
